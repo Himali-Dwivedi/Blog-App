@@ -1,0 +1,23 @@
+<%- include("partials/header") %>
+
+    <h1>Compose</h1>
+    <form action="/compose" method="post">
+
+        <div class="mb-3 cutom_text_input">
+            <label for="title">Title</label>
+            <input class="form-control" name="title" type="text" placeholder="What's new today?" />
+        </div>
+
+        <div class="mb-3 cutom_text_input">
+            <label for="blog">Post</label>
+            <textarea class="form-control" id="blog" rows="10" cols="60" name="blog"
+                placeholder="Write something here..."></textarea>
+        </div>
+
+        <button class="btn btn-lg btn-primary custom_button" type="submit" name="submit_blog">Publish</button>
+
+
+        </div>
+    </form>
+
+    <!-- <%- include("partials/footer") %> -->

@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+
+    <% if(blog_list.length == 0){ %>
+        <h1>Home</h1>
+        <p>
+            <%= home_content %>
+        </p>
+    <% } %>
+
+    <% for (var index=0; index < blog_list.length; index++){ %>
+        <h1>
+            <%= blog_list[index].title %>
+        </h1>
+
+            <% var visible_length=100; %>
+            <% var truncated_string="" ; %>
+            <% if (blog_list[index].content.length> 100){ %>
+                <% truncated_string=blog_list[index].content.substring(0,visible_length) + "..." ; %>
+                <p class="blog_content">
+                    <%=truncated_string%>
+                </p>
+                <a href="/blogs/<%=blog_list[index]._id %>">Read more</a>
+            <% } else{ %>
+                <% truncated_string=blog_list[index].content %>
+                <p class="blog_content">
+                    <%=truncated_string%>
+                </p>
+            <% } %>
+    <% } %>
+
+<!-- <%- include("partials/footer")%> -->
